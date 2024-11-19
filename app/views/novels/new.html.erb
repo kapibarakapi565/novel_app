@@ -1,2 +1,5 @@
 <%= form_with(model: @novel, local: true) do |form|%>
+  <%= form.text_field :title %>
+  <%= form.text_area :main_text %>
+  <%= form.submit "保存" %>
 <% end %>
