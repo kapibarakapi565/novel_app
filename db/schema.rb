@@ -10,30 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_11_17_115310) do
-  create_table "chapters", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "novel_id", null: false
-    t.string "title"
-    t.integer "chapter_number"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["novel_id"], name: "index_chapters_on_novel_id"
-  end
-
-  create_table "contents", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.bigint "chapter_id", null: false
-    t.text "content", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["chapter_id"], name: "index_contents_on_chapter_id"
-  end
-
-  create_table "novels", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+ActiveRecord::Schema[7.0].define(version: 2024_11_17_113400) do
+  create_table "novels", charset: "utf8mb3", force: :cascade do |t|
     t.string "title", null: false
+    t.text "main_text", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "chapters", "novels"
-  add_foreign_key "contents", "chapters"
 end
