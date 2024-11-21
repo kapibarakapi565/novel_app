@@ -31,6 +31,7 @@ class NovelsController < ApplicationController
 
   def show
     @novel = Novel.find(params[:id])
+    @novel_title = @novel.title
   end
 
   private
