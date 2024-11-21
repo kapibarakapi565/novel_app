@@ -23,6 +23,16 @@ class NovelsController < ApplicationController
     @novel = Novel.find(params[:id])
   end
 
+  def update
+    novel = Novel.find(params[:id])
+    novel.update(novel_params)
+    redirect_to root_path
+  end
+
+  def show
+    @novel = Novel.find(params[:id])
+  end
+
   private
   def novel_params
     params.require(:novel).permit(:title, :main_text)
