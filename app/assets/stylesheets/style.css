@@ -1,0 +1,24 @@
+.novel-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* フォーム要素間の間隔 */
+}
+
+.novel-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.novel-form .form-control {
+  width: 100%;
+  max-width: 600px; /* 最大幅を設定（任意） */
+  font-size: 16px; /* 文字のサイズを調整 */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.novel-form .btn {
+  width: 150px;
+  align-self: flex-start; /* ボタンを左寄せに */
+}
